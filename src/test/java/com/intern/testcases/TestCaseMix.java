@@ -408,5 +408,6 @@ public class TestCaseMix extends TestBase2 {
         homepage.tapBackBtn();
         navigationbar.tapBtnNavFeed();
         navigationbar.tapBtnNavProfile();
+        navigationbar.tapBtnNavHome();
     }
 }
