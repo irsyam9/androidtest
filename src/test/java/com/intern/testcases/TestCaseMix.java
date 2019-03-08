@@ -1,5 +1,6 @@
 package com.intern.testcases;
 
+import com.github.javafaker.Faker;
 import com.intern.base.TestBase2;
 import com.intern.pages.*;
 import com.intern.util.NavigationBar;
@@ -23,6 +24,9 @@ public class TestCaseMix extends TestBase2 {
     private AddComment addcomment;
     private AddPost addpost;
     private ScrollUp scrollup;
+    private OnBoardingPage onboardingpage;
+    private AddReview addreview;
+    private Faker faker;
 
     public TestCaseMix(){
         super();
@@ -41,6 +45,9 @@ public class TestCaseMix extends TestBase2 {
         addcomment = new AddComment();
         addpost = new AddPost();
         scrollup = new ScrollUp();
+        onboardingpage = new OnBoardingPage();
+        addreview = new AddReview();
+        faker = new Faker();
     }
 
     @AfterMethod
@@ -53,7 +60,7 @@ public class TestCaseMix extends TestBase2 {
         carouselpage.tapNextBtn();
         carouselpage.tapNextBtn();
         carouselpage.tapStartBtn();
-        carouselpage.tapLoginBtn();
+        onboardingpage.tapLoginBtn();
         loginpage.loginField(prop.getProperty("user"), prop.getProperty("pass"));
         loginpage.tapSigninBtn();
         Thread.sleep(4000);
@@ -409,5 +416,6 @@ public class TestCaseMix extends TestBase2 {
         navigationbar.tapBtnNavFeed();
         navigationbar.tapBtnNavProfile();
         navigationbar.tapBtnNavHome();
+
     }
 }

@@ -16,9 +16,6 @@ public class CarouselPage extends TestBase2 {
     @AndroidFindBy(id = "com.fdbr.android.debug:id/rel_start")
     MobileElement btnStart;
 
-    @AndroidFindBy(id = "com.fdbr.android.debug:id/rel_login")
-    MobileElement btnLogin;
-
     public CarouselPage() {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
@@ -31,8 +28,5 @@ public class CarouselPage extends TestBase2 {
         btnStart.click();
     }
 
-    public void tapLoginBtn() {
-        btnLogin.click();
-    }
 
 }
