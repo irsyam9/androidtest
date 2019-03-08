@@ -114,6 +114,7 @@ public class TestRegister extends TestBase2 {
         formuser.tapNextBtn();
         formuser.tapSkipBtn();
         formuser.tapStartBtn();
+        Thread.sleep(2000);
         addreview.tapPlusBtn();
         addreview.tapBtnAddReview();
         Thread.sleep(5000);
