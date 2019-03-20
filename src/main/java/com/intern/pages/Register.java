@@ -67,6 +67,9 @@ public class Register extends TestBase2 {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='2002']")
     AndroidElement btnYear5;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='2001']")
+    AndroidElement btnYear6;
+
     @AndroidFindBy(id = "com.fdbr.android.debug:id/btn_ok")
     MobileElement btnOk;
 
@@ -91,6 +94,7 @@ public class Register extends TestBase2 {
     public void Year3Btn(){btnYear3.click();}
     public void Year4Btn(){btnYear4.click();}
     public void Year5Btn(){btnYear5.click();}
+    public void Year6Btn(){btnYear6.click();}
     public void OkBtn(){btnOk.click();}
     public void NextBtn(){btnNext.click();}
 

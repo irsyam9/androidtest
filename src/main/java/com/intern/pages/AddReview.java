@@ -50,8 +50,14 @@ public class AddReview extends TestBase2 {
     @AndroidFindBy(id = "com.fdbr.android.debug:id/txt_story")
     MobileElement btnReview2;
 
-    @AndroidFindBy(id = "com.fdbr.android.debug:id/toolbar_back_button")
+    @AndroidFindBy(id = "com.fdbr.android.debug:id/img_back")
     MobileElement btnBack;
+
+    @AndroidFindBy(id = "com.fdbr.android.debug:id/btn_yes")
+    MobileElement btnYes;
+
+    @AndroidFindBy(id = "com.fdbr.android.debug:id/img_back")
+    MobileElement btnBack2;
 
     public AddReview(){
         PageFactory.initElements(new AppiumFieldDecorator(driver),this);
@@ -163,7 +169,6 @@ public class AddReview extends TestBase2 {
 
     public void writeReview(String sentence){btnReview2.sendKeys(sentence);}
     public void tapBackBtn(){btnBack.click();}
-
-
-
+    public void tapYesBtn(){btnYes.click();}
+    public void tapBackBtn1(){btnBack2.click();}
 }

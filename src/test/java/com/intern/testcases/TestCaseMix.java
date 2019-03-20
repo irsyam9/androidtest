@@ -25,8 +25,8 @@ public class TestCaseMix extends TestBase2 {
     private AddPost addpost;
     private ScrollUp scrollup;
     private OnBoardingPage onboardingpage;
-    private AddReview addreview;
     private Faker faker;
+    private AddProduct addproduct;
 
     public TestCaseMix(){
         super();
@@ -46,8 +46,8 @@ public class TestCaseMix extends TestBase2 {
         addpost = new AddPost();
         scrollup = new ScrollUp();
         onboardingpage = new OnBoardingPage();
-        addreview = new AddReview();
         faker = new Faker();
+        addproduct = new AddProduct();
     }
 
     @AfterMethod
@@ -65,6 +65,24 @@ public class TestCaseMix extends TestBase2 {
         loginpage.tapSigninBtn();
         Thread.sleep(4000);
         homepage.tapXBtn();
+        addproduct.tapPlusBtn();
+        addproduct.tapBtnAddReview();
+        addproduct.tapProfilBtn();
+        Thread.sleep(5000);
+        addproduct.tapTakeBtn();
+        addproduct.tapHoldBtn();
+        addproduct.tapBrandBtn();
+        addproduct.tapBrandsBtn();
+        addproduct.tapProdukBtn();
+        addproduct.tapProdukCategoryBtn();
+        addproduct.tapMoisturizerBtn();
+        addproduct.ProdukNameBtn("kreatifitas");
+        addproduct.ShadeBtn("inovatif");
+        addproduct.edtTextDesc(faker.lorem().sentence(35));
+        addproduct.SetPriceBtn("1.000.000.000");
+        addproduct.SetMoneyBtn();
+        addproduct.EuroBtn();
+        addproduct.setBtnAddProduct();
         homepage.tapNotifBtn();
         Thread.sleep(2000);
         scrolldown.ScrollDown();
