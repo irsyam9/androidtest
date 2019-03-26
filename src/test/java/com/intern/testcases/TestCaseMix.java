@@ -1,5 +1,6 @@
 package com.intern.testcases;
 
+import com.github.javafaker.Faker;
 import com.intern.base.TestBase2;
 import com.intern.pages.*;
 import com.intern.util.NavigationBar;
@@ -23,6 +24,9 @@ public class TestCaseMix extends TestBase2 {
     private AddComment addcomment;
     private AddPost addpost;
     private ScrollUp scrollup;
+    private OnBoardingPage onboardingpage;
+    private Faker faker;
+    private AddProduct addproduct;
 
     public TestCaseMix(){
         super();
@@ -41,6 +45,9 @@ public class TestCaseMix extends TestBase2 {
         addcomment = new AddComment();
         addpost = new AddPost();
         scrollup = new ScrollUp();
+        onboardingpage = new OnBoardingPage();
+        faker = new Faker();
+        addproduct = new AddProduct();
     }
 
     @AfterMethod
@@ -53,11 +60,29 @@ public class TestCaseMix extends TestBase2 {
         carouselpage.tapNextBtn();
         carouselpage.tapNextBtn();
         carouselpage.tapStartBtn();
-        carouselpage.tapLoginBtn();
+        onboardingpage.tapLoginBtn();
         loginpage.loginField(prop.getProperty("user"), prop.getProperty("pass"));
         loginpage.tapSigninBtn();
         Thread.sleep(4000);
         homepage.tapXBtn();
+        addproduct.tapPlusBtn();
+        addproduct.tapBtnAddReview();
+        addproduct.tapProfilBtn();
+        Thread.sleep(5000);
+        addproduct.tapTakeBtn();
+        addproduct.tapHoldBtn();
+        addproduct.tapBrandBtn();
+        addproduct.tapBrandsBtn();
+        addproduct.tapProdukBtn();
+        addproduct.tapProdukCategoryBtn();
+        addproduct.tapMoisturizerBtn();
+        addproduct.ProdukNameBtn("kreatifitas");
+        addproduct.ShadeBtn("inovatif");
+        addproduct.edtTextDesc(faker.lorem().sentence(35));
+        addproduct.SetPriceBtn("1.000.000.000");
+        addproduct.SetMoneyBtn();
+        addproduct.EuroBtn();
+        addproduct.setBtnAddProduct();
         homepage.tapNotifBtn();
         Thread.sleep(2000);
         scrolldown.ScrollDown();
@@ -409,5 +434,6 @@ public class TestCaseMix extends TestBase2 {
         navigationbar.tapBtnNavFeed();
         navigationbar.tapBtnNavProfile();
         navigationbar.tapBtnNavHome();
+
     }
 }

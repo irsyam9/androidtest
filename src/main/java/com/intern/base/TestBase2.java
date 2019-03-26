@@ -48,7 +48,7 @@ public class TestBase2 {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", device);
         caps.setCapability("platformName", platform);
-        caps.setCapability("app", cwd+"/src/app/new-app-debug.apk");
+        caps.setCapability("app", cwd+"\\src\\app\\new-app-debug.apk");
         caps.setCapability("automationName","UiAutomator2");
 
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
